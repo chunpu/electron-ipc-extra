@@ -62,7 +62,7 @@ ipc.off('channel-name')
 
 Install [Devtron](https://electronjs.org/devtron)
 
-![](https://user-images.githubusercontent.com/4565306/58407374-35f5cc80-809e-11e9-99e5-cf1c7f12ad6c.png)
+![](https://user-images.githubusercontent.com/4565306/58407720-0bf0da00-809f-11e9-9a79-ea2202d9421b.png)
 
 ## Reference Doc
 
