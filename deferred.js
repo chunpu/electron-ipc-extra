@@ -7,4 +7,4 @@ class Deferred {
   }
 }
 
-export default Deferred
+module.exports = Deferred
