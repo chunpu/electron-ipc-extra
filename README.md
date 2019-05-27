@@ -1,6 +1,6 @@
 # electron-promise-extra
 
-A Better Promise based IPC Library in Electron
+:dart: A Better Promise based IPC Library in Electron
 
 ## Features
 
@@ -58,9 +58,11 @@ import ipc from 'electron-ipc-extra'
 ipc.off('channel-name')
 ```
 
-## Debug with [Devtron](https://electronjs.org/devtron)
+## Debug IPC data
 
+Install [Devtron](https://electronjs.org/devtron)
 
+![](https://user-images.githubusercontent.com/4565306/58407374-35f5cc80-809e-11e9-99e5-cf1c7f12ad6c.png)
 
 ## Reference Doc
 
