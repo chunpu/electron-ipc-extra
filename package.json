@@ -1,0 +1,22 @@
+{
+  "name": "electron-ipc-extra",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chunpu/electron-ipc-extra.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chunpu/electron-ipc-extra/issues"
+  },
+  "homepage": "https://github.com/chunpu/electron-ipc-extra#readme",
+  "dependencies": {
+    "uuid": "^3.3.2"
+  }
+}
