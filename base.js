@@ -6,6 +6,7 @@ class BaseIPC {
   constructor(kind, ipc) {
     this.kind = kind
     this.ipc = ipc
+    this.version = '1.1.1'
   }
 
   send(channel, ...args) {
@@ -40,7 +41,11 @@ class BaseIPC {
     this.ipc.on(channel, async (event, opt, ...args) => {
       opt = opt || {}
       const replyChannel = this.getReplyChannel(channel, opt.eventId)
-      const res = await Promise.resolve(listener.call(Object.assign({ event }, opt), ...args))
+      try {
+        var res = await listener.call(Object.assign({ event }, opt), ...args)
+      } catch (err) {
+        return event.sender.send(replyChannel, Object.assign({ status: 'error' }, opt), err)
+      }
       event.sender.send(replyChannel, Object.assign({ status: 'ok' }, opt), res)
     })
   }
