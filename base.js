@@ -1,12 +1,12 @@
 const electron = require('electron')
-const Deferred = require('./deferred')
 const uuid = require('uuid/v1')
+const serializeError = require('serialize-error')
 
 class BaseIPC {
   constructor(kind, ipc) {
     this.kind = kind
     this.ipc = ipc
-    this.version = '1.1.1'
+    this.version = '1.2.4'
   }
 
   send(channel, ...args) {
@@ -44,7 +44,9 @@ class BaseIPC {
       try {
         var res = await listener.call(Object.assign({ event }, opt), ...args)
       } catch (err) {
-        return event.sender.send(replyChannel, Object.assign({ status: 'error' }, opt), err)
+        err = serializeError(err)
+        event.sender.send(replyChannel, Object.assign({ status: 'error' }, opt), err)
+        return
       }
       event.sender.send(replyChannel, Object.assign({ status: 'ok' }, opt), res)
     })
