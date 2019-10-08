@@ -1,4 +1,4 @@
-# electron-promise-extra
+# electron-ipc-extra
 
 :dart: A Better Promise based IPC Library in Electron
 
@@ -14,7 +14,7 @@
 ## Installation
 
 ```sh
-$ npm install electron-promise-extra --save
+$ npm install electron-ipc-extra --save
 ```
 
 ## Usage
