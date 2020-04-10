@@ -37,6 +37,12 @@ let data = await ipc.send('channel-name', 'some data', 'another data')
 console.log('data') // => 'reply data'
 ```
 
+#### Main send to Webcontents
+
+```js
+let data = await ipc.sendToWebContents(webContents, 'channel-name', 'data')
+```
+
 #### Get original `event` object
 
 ```js
