@@ -14,6 +14,10 @@ class MainIPC extends BaseIPC {
   on(...args) {
     return super.on(...args)
   }
+
+  sendToWebContents(...args) {
+    return super.sendToWebContents(...args)
+  }
 }
 
 module.exports = new MainIPC()

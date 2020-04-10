@@ -37,6 +37,25 @@ class BaseIPC {
     })
   }
 
+  sendToWebContents(webContents, channel, ...args) {
+    const eventId = uuid()
+    const replyChannel = this.getReplyChannel(channel, eventId)
+    return new Promise((resolve, reject) => {
+      this.ipc.once(replyChannel, async (event, opt, ...args) => {
+        if (opt && opt.status === 'ok') {
+          resolve(...args)
+        } else {
+          reject(...args)
+        }
+      })
+      // main => renderer, send to single webContents
+      webContents.send(channel, {
+        eventId,
+        webContentsId: webContents.id
+      }, ...args)
+    })
+  }
+
   on(channel, listener) {
     this.ipc.on(channel, async (event, opt, ...args) => {
       opt = opt || {}

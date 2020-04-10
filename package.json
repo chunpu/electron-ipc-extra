@@ -1,8 +1,9 @@
 {
   "name": "electron-ipc-extra",
-  "version": "1.2.5",
+  "version": "2.0.0",
   "description": "A Better Promise based IPC Library in Electron",
   "main": "index.js",
+  "private": false,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
