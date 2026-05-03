@@ -19,6 +19,6 @@
   "homepage": "https://github.com/chunpu/electron-ipc-extra#readme",
   "dependencies": {
     "serialize-error": "^4.1.0",
-    "uuid": "^3.3.2"
+    "uuid": "^14.0.0"
   }
 }
